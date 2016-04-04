@@ -263,5 +263,22 @@ public class ActionBeanGame extends Application{
 			}
 		}
 		
+		
+		//create a polyline to draw the path of the ball
+		Polyline ballpath = new Polyline();
+		
+		//draw the path
+		ballpath.getPoints().addAll(190.0, 55.0, 190.0, 67.0);
+		for(int i = 0; i < 8; i++){
+			ballpath.getPoints().addAll(ballX[i], ballY[i]);
+		}
+		
+		//let the ball move on the path
+		PathTransition pt = new PathTransition();
+		pt.setDuration(Duration.millis(4000));
+		pt.setPath(ballpath);
+		pt.setNode(ball);
+		pt.play();
+	
 	}
 }
