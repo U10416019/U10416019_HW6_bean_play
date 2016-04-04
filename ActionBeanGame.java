@@ -175,36 +175,6 @@ public class ActionBeanGame extends Application{
 			}
 		});
 	}
-	
-	
-	//create a method to determine how is the path of the ball
-	public void ballAction(){
-		//create a ball
-		Circle ball = new Circle(190, 55, 6);
-		//add the ball in the pane
-		pane.getChildren().add(ball);
-		
-		//create some data fields
-		double[] address = new double[7];
-		double[] ballX = new double[8];
-		double[] ballY = new double[8];
-		ballX[0] = 190;
-		ballY[0] = 67;
-		SecureRandom ballAddress = new SecureRandom();
-		//these random determine how is the color of the ball
-		SecureRandom red = new SecureRandom();
-		SecureRandom green = new SecureRandom();
-		SecureRandom blue = new SecureRandom();
-		
-		//set the color of the ball
-		ball.setFill(new Color((red.nextInt(10) + 1) * 0.1, (green.nextInt(10) + 1) * 0.1, (blue.nextInt(10) + 1) * 0.1, 1));
-		
-		
-		//create seven random numbers then save them in array
-		for(int i = 0; i < 7; i++){
-			address[i] = ballAddress.nextInt(2);
-		}
-		
-		
+
 	}
 }
