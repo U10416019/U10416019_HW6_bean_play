@@ -205,6 +205,63 @@ public class ActionBeanGame extends Application{
 			address[i] = ballAddress.nextInt(2);
 		}
 		
+		//create the path of the ball
+		for(int i = 0; i < 7; i++){
+			//determine the path of the ball before the last grid of array
+			if(address[i] == 0 && i != 6){
+				ballX[i + 1] = ballX[i] - 17.5;
+				ballY[i + 1] = 67 + (i + 1) * 38;
+			}
+			else if(address[i] == 1 && i != 6){
+				ballX[i + 1] = ballX[i] + 17.5;
+				ballY[i + 1] = 67 + (i + 1) * 38;
+			}
+			
+			//determine the last path
+			if(i == 6){
+				//determine the x coordinate of the ball
+				if(address[i] == 0){
+					ballX[i + 1] = ballX[i] - 17.5;
+				}
+				else if(address[i] == 1){
+					ballX[i + 1] = ballX[i] + 17.5;
+				}
+				
+				//determine the y coordinate of the ball and count how many balls are there in the grid
+				if(ballX[i + 1] == 67.5){
+					ballY[i + 1] = (67 + i * 38 + 79) - one * 12;
+					one++;
+				}
+				else if(ballX[i + 1] == 102.5){
+					ballY[i + 1] = (67 + i * 38 + 79) - two * 12;
+					two++;
+				}
+				else if(ballX[i + 1] == 137.5){
+					ballY[i + 1] = (67 + i * 38 + 79) - three * 12;
+					three++;
+				}
+				else if(ballX[i + 1] == 172.5){
+					ballY[i + 1] = (67 + i * 38 + 79) - four * 12;
+					four++;
+				}
+				else if(ballX[i + 1] == 207.5){
+					ballY[i + 1] = (67 + i * 38 + 79) - five * 12;
+					five++;
+				}
+				else if(ballX[i + 1] == 242.5){
+					ballY[i + 1] = (67 + i * 38 + 79) - six * 12;
+					six++;
+				}
+				else if(ballX[i + 1] == 277.5){
+					ballY[i + 1] = (67 + i * 38 + 79) - seven * 12;
+					seven++;
+				}
+				else if(ballX[i + 1] == 312.5){
+					ballY[i + 1] = (67 + i * 38 + 79) - eight * 12;
+					eight++;
+				}
+			}
+		}
 		
 	}
 }
